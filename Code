@@ -1,0 +1,55 @@
+// C++ code
+//
+// connection for motor A
+int enA=9;
+int in1=4;
+int in2=5;
+
+//connection for motor B
+int enB=3;
+int in3=6;
+int in4=7;
+
+
+void setup()
+{
+  // configure all the used ports as output
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(9, OUTPUT);
+  
+ 
+  
+  
+}
+
+void loop()
+{//enable A and B motors
+  analogWrite(9,255);
+  analogWrite(3,255);
+  
+  // turn on the motor on the first direction
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  delay(2000);
+  
+  
+  // stop the two motors
+   digitalWrite(in1,LOW);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
+  delay(2000);
+  
+  //TURN ON THE MOTOR ON THE OTHER DIRECTION 
+  digitalWrite(in1, LOW);
+  digitalWrite(in2,HIGH);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
+  delay(2000);
+}
